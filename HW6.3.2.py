@@ -110,13 +110,27 @@ ALPHA = 0.05
 myRounds = Rounds(num_rounds)  # Create rounds
 myRounds.play()  # Play rounds
 
+
+
 print("Expected value:", myRounds.get_avg_tally())
-print("95% CI:", myRounds.get_expected_value_CI(ALPHA))
 print("95% PI:", myRounds.get_expected_value_PI(ALPHA))
 print()
 print("Probability of loss:", myRounds.get_avg_tally2())
-print("95% CI:", myRounds.get_expected_loss_CI(ALPHA))
 print("95% PI:", myRounds.get_expected_loss_PI(ALPHA))
+print()
+print ("The gambler is analyzed as a transient-state simulation model,")
+print ("as there are only 10 observations, such that the Law of Large Numbers")
+print ("can not be applied to make any inferences about the sample mean.")
+print("We are therefore more interested in the distribution of our expected value and probability of losss.")
+print()
+print ("Consequently, we use the prediction interval, which can be interpreted as:")
+print ("The next realization of the expected value")
+print ("will fall in the projection interval", myRounds.get_expected_value_PI(ALPHA))
+print ("with probability 0.95.")
+print()
+print ("The next realization of the probability of loss")
+print ("will fall in the projection interval", myRounds.get_expected_loss_PI(ALPHA))
+print ("with probability 0.95.")
 print()
 print("Minimum value:", myRounds.get_min_tally())
 print("Minimum possible value:", -entry_fee)

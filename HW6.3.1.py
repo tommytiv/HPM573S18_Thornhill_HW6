@@ -110,6 +110,16 @@ ALPHA = 0.05
 myRounds = Rounds(num_rounds)  # Create rounds
 myRounds.play()  # Play rounds
 
+print ("The casino owner is analyzed as a steady-state simulation model,")
+print ("as there are many observations, such that the Law of Large Numbers")
+print ("can be applied to make the inference that the sample mean converges to the true mean")
+print()
+print ("Consequently, we use the confidence interval, which can be interpreted as:")
+print ("If we repeat this coin-toss simulation many times to construct a very large number of independent 95%")
+print ("confidence intervals, each based on 1,000 observations, the proportion of these confidence")
+print ("intervals that cover the unknown but true mean 𝜇 (of either the expected value or the probability")
+print ("of loss) is expected to be 0.95.")
+print()
 print("Expected value:", myRounds.get_avg_tally())
 print("95% CI:", myRounds.get_expected_value_CI(ALPHA))
 print("95% PI:", myRounds.get_expected_value_PI(ALPHA))
